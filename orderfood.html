@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food-website</title>
+    <link rel="stylesheet" href="stylefood.css">
+    <script src="https://kit.fontawesome.com/f75b254709.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="cart">
+                    <a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                <a href="indexF.html"><img src="https://images.getbento.com/accounts/242fa29fc799c8399753801e4e1af149/media/images/89538CravingLOGO_approved_o_2_3_22.png?w=600&fit=max&auto=compress,format&h=600" class="logo"></a>
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutF.html">About</a></li>
+                    <li><a href="index.html#menu">Menu</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="orderfood.html">Order</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+             </nav>
+        </div>
+        </header>
+        <div id="order">
+            <div class="textorder">
+                <h2>ORDER NOW</h2>
+            </div>
+        </div>
+        <div class="orderfood">
+            <form name="submit-to-google-sheet">
+                <div class="inputBox">
+                    <div class="input">
+                        <span>Your Name</span>
+                        <input type="text" name="Name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input">
+                        <span>Your Phone Number</span>
+                        <input type="tel" name="Phone-Number" placeholder="Enter your number" pattern="[1-9]{1}[0-9]{9)" required>
+                    </div>
+                </div>
+                <div class="inputBox">
+                    <div class="input">
+                        <span>Your Order</span>
+                        <input type="text" name="Order" placeholder="Enter Food Name" required>
+                    </div>
+                    <div class="input">
+                        <span>Additional Food</span>
+                        <input type="text" name="Add-On" placeholder="Additional Food" >
+                    </div>
+                </div>
+                <div class="inputBox">
+                    <div class="input">
+                        <span>How Much?</span>
+                        <input type="number" name="Quantity" placeholder="Quantity" value="1" required>
+                    </div>
+                    <div class="input">
+                        <span>Date and Time</span>
+                        <input type="datetime-local" name="Date and Time" placeholder="Date and Time" required>
+                    </div>
+                </div>
+                <div class="inputBox">
+                    <div class="input">
+                        <span>Your Address</span>
+                        <textarea name="" placeholder="Enter your address" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="input">
+                        <span>Your Message</span>
+                        <textarea name="" placeholder="Enter your message" id="" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btno"><b>ORDER NOW</b></button>
+                <span id="msg"></span>
+            </form>
+        </div>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyR8IHFvjQc4rz1ZNpRtCX_Q4BoogkYxyScrIv-HdfIOT98qwq3V_dTENBoJm_M_O2RiQ/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg= document.getElementById("msg")
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Order Received"
+                    setTimeout(function(){
+                        msg.innerHTML= ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+</body>
+</html>      

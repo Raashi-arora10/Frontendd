@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylefood.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="cart">
+                    <a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                <a href="indexF.html"><img src="https://images.getbento.com/accounts/242fa29fc799c8399753801e4e1af149/media/images/89538CravingLOGO_approved_o_2_3_22.png?w=600&fit=max&auto=compress,format&h=600" class="logo"></a>
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutF.html">About</a></li>
+                    <li><a href="index.html#menu">Menu</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="orderfood.html">Order</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+             </nav>
+        </div>
+    </header>
+    <div class="sidecart">
+        <div class="cart_content">
+            <div class="cart_header">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <div class="header_title">
+                    <h2>Your Cart</h2>
+                    <span id="items_num">4</span>
+                </div>
+                <span id="close_btn" class="close_btn">&times;</span>
+            </div>
+                <div class="cart_items">
+                    <div class="cart_item">
+                    <div class="remove_items">
+                        <span>&times;</span>
+                    </div>
+                    <div class="item_img">
+                        <img src="imagesF/pizza.png" alt="">
+                    </div>
+                    <div class="img_details">
+                        <p>Farm Fresh</p>
+                        <strong>Rs.300</strong>
+                        <div class="counter">
+                            <span class="down" onClick='decreaseCount(event,this)'>-</span>
+                            <input type="text" value="0">
+                            <span class="up" onClick="increaseCount(event,this)">+</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="cart_actions">
+                    <div class="subtotal">
+                        <p>SUBTOTAL</p>
+                        <P>Rs.<span id="subtotal_price">300</span></P>
+                    </div>
+                    <button>View Cart</button>
+                    <button><a href="orderfood.html">Order Now</a></button>
+                </div>
+    
+        </div>
+    </div>
+     
+
+    <script>
+        function increaseCount(a,b){
+            var input = b.previousElementSibling;
+            var value = parseInt(input.value, 10);
+            value = isNaN(value) ? 0 :value;
+            value++;
+            input.value = value;
+        }
+        function decreaseCount(a,b){
+            var input = b.nextElementSibling;
+            var value = parseInt(input.value, 10);
+            if(value>0){
+                value = isNaN(value) ? 0 : value;
+                value--;
+                input.value=value;
+            }
+        }
+  </script>
+
+
+</body>
+</html>

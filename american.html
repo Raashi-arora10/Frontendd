@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food-website</title>
+    <link rel="stylesheet" href="stylefood.css">
+    <script src="https://kit.fontawesome.com/f75b254709.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="cart">
+                <a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                <a href="indexF.html"><img src="https://images.getbento.com/accounts/242fa29fc799c8399753801e4e1af149/media/images/89538CravingLOGO_approved_o_2_3_22.png?w=600&fit=max&auto=compress,format&h=600" class="logo"></a>
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutF.html">About</a></li>
+                    <li><a href="index.html#menu">Menu</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="orderfood.html">Order</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        <button onclick="topFunction()" id="myBtn">^</button>
+        <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('snacks')">Snacks</p>
+            <p class="tab-links" onclick="opentab('deserts')">Deserts</p>
+        </div>
+        <div class="tab-contents active-tab" id="snacks">
+            <div class="grid">
+                <div>
+                    <img src="imagesF/pizza.png">
+                    <h2>Farm Fresh</h2>
+                    <p>Rs.300</p>
+                    <a href="orderfood.html">Add To Cart</a>
+        <!--<div class="counter">
+            <span class="down" onClick='decreaseCount(event,this)'>-</span>
+            <input type="text" value="0">
+            <span class="up" onClick="increaseCount(event,this)">+</span>
+        </div>-->
+                </div>
+                <div>
+                    <img src="imagesF/burger.png">
+                    <h2>YumBun Burger</h2>
+                    <p>Rs.150</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/noodles.png">
+                    <h2>Chinese Noodles</h2>
+                    <p>Rs.170</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/momoss.png">
+                    <h2>Fiery Bites</h2>
+                    <p>Rs.200 (10 pcs)</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/rolls.png">
+                    <h2>Hara Bhara Roll</h2>
+                    <p>Rs.180</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/paneer.png">
+                    <h2>Sizzler Paneer Grill</h2>
+                    <p>Rs.255</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/burger.png">
+                    <h2>YumBun Burger</h2>
+                    <p>Rs.150</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/noodles.png">
+                    <h2>Chinese Noodles</h2>
+                    <p>Rs.170</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="tab-contents" id="deserts">
+            <div class="grid">
+                <div>
+                    <img src="imagesF/icecream.png">
+                    <h2>Mood-Cream</h2>
+                    <p>Rs.210</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/waffle.png">
+                    <h2>Very Berry Waffle</h2>
+                    <p>Rs.220</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/coffee.png">
+                    <h2>Choco-cream Frappe</h2>
+                    <p>Rs.155</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/icecream.png">
+                    <h2>Mood-Cream</h2>
+                    <p>Rs.210</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/waffle.png">
+                    <h2>Very Berry Waffle</h2>
+                    <p>Rs.220</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/coffee.png">
+                    <h2>Choco-cream Frappe</h2>
+                    <p>Rs.155</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/waffle.png">
+                    <h2>Very Berry Waffle</h2>
+                    <p>Rs.220</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+                <div>
+                    <img src="imagesF/coffee.png">
+                    <h2>Choco-cream Frappe</h2>
+                    <p>Rs.155</p>
+                    <a href="orderfood.html">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    let mybutton = document.getElementById("myBtn");     //Get the button
+    window.onscroll = function(){scrollFunction()};      //When user scrolls down 20px from top of doc show btn
+    function scrollFunction(){
+        if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+            mybutton.style.display="block";
+        }
+        else{
+            mybutton.style.display="none";
+        }
+    }
+    function topFunction(){                               //When the user clicks scroll to top
+        document.documentElement.scrollTop = 0;
+    }
+    
+</script>
+<script>
+    var tablinks=  document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+    
+
+</body>
+</html>

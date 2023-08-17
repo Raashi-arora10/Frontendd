@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food-website</title>
+    <link rel="stylesheet" href="stylefood.css">
+    <script src="https://kit.fontawesome.com/f75b254709.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="cart">
+                    <a href="Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                <a href="indexF.html"><img src="https://images.getbento.com/accounts/242fa29fc799c8399753801e4e1af149/media/images/89538CravingLOGO_approved_o_2_3_22.png?w=600&fit=max&auto=compress,format&h=600" class="logo"></a>
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutF.html">About</a></li>
+                    <li><a href="index.html#menu">Menu</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="orderfood.html">Order</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+             </nav>
+        </div>
+    </header>
+        <div id="banner">
+            <div class="text">
+                <h1>The Taste <br> Of Passion</h1>
+                <p>Discover a world of culinary bliss at Cravings</p>
+                <a href="indexF.html#menu" class="btnreserve"><b>DISCOVER MENU</b></a>
+            </div>
+        </div>
+        <div class="reservation">
+            <form  name="submit-to-google-sheet">
+                <div class="knife">
+                <img src="imagesF/knife.png"></div>
+                <h2>Reservation</h2>
+                <p><b>YOUR TABLE</b></p>
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="date" name="Date" placeholder="Date" required>
+                <input type="number" name="People" placeholder="No. of people"  required>
+                <input type="time" name="Timing" placeholder="Timing" required>
+                <button type="submit" class="btnr"><b>BOOK A TABLE</b></button>
+            <span id="msgr"></span>
+            </form>
+        </div>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxpCefnPkAq1gY3NxUHv2jUNCcvcTixZySEmIJv7Ja5iyKWUxQaZJ77THmY6lHZHig/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msgr= document.getElementById("msgr")
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    alert("Your table has been booked")
+                    setTimeout(function(){
+                        msgr.innerHTML= ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+</body>
+</html>
