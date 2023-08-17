@@ -1,0 +1,78 @@
+<!-----------------------------------------About------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food-website</title>
+    <link rel="stylesheet" href="stylefood.css">
+    <script src="https://kit.fontawesome.com/f75b254709.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="about">
+        <header>
+        <div class="container">
+            <nav>
+                <div class="cart">
+                    <a href="file:///C:/Users/hp/Desktop/Food-Website/Cart.html"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                <img src="https://images.getbento.com/accounts/242fa29fc799c8399753801e4e1af149/media/images/89538CravingLOGO_approved_o_2_3_22.png?w=600&fit=max&auto=compress,format&h=600" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="file:///C:/Users/hp/Desktop/Food-Website/index.html">Home</a></li>
+                    <li><a href="file:///C:/Users/hp/Desktop/Food-Website/aboutF.html#">About</a></li>
+                    <li><a href="file:///C:/Users/hp/Desktop/Food-Website/index.html#menu">Menu</a></li>
+                    <li><a href="file:///C:/Users/hp/Desktop/Food-Website/reservation.html">Reservation</a></li>
+                    <li><a href="file:///C:/Users/hp/Desktop/Food-Website/orderfood.html">Order</a></li>
+                    <li><a href="file:///C:/Users/hp/Desktop/Food-Website/index.html#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        </header>
+        <button onclick="topFunction()" id="myBtn">^</button>
+        <div class="content">
+            <h5>About Us</h5>
+            <h1>WHY CHOOSE US?</h1>
+            <img src="imagesF/aboutfood.png">
+            <h1 class="sub-title">Best Food In The Country</h1>
+            <p class="textabout">Here, at Cravings, we understand cravings. We know how important it is to get your food fast,
+            and we have a 1-hour delivery guarantee, or you get your money back. While we prepare our food fast, we develop the
+            flavor slowly. Our dough rises over the night, and our meat is always marinated. That's why every chicken tender,
+            every beef skewer, and every bun taste like heaven.
+           <br> Don't let hunger take control of you. Beat it with Cravings!"</br></p>
+           <div class="list">
+            <div>
+                <i class="fa-solid fa-truck"></i>
+                <p>Free Delivery</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+                <p>Easy Payments</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-phone"></i>
+                <p>24/7 Service</p>
+            </div>
+           </div>
+           <a href="file:///C:/Users/hp/Desktop/Food-Website/indexF.html#contact" class="btnabout">Learn More</a>
+        </div>
+    </div>
+
+    <script>
+        let mybutton = document.getElementById("myBtn");     //Get the button
+        window.onscroll = function(){
+            scrollFunction()
+        };      //When user scrolls down 20px from top of doc show btn
+        function scrollFunction(){
+            if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+                mybutton.style.display="block";
+            }
+            else{
+                mybutton.style.display="none";
+            }
+        }
+        function topFunction(){                               //When the user clicks scroll to top
+            document.documentElement.scrollTop = 0;
+        }
+        
+    </script>
+</body>
+</html>
